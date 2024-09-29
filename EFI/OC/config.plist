@@ -24,14 +24,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-ECRW.aml</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-ECRW.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>SSDT-PLUG-DRTNIA.aml</string>
 				<key>Enabled</key>
 				<true/>
@@ -45,14 +37,6 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-PNLF.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>SSDT-THINK.aml</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-THINK.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -281,41 +265,39 @@
 			<true/>
 		</dict>
 	</dict>
+	<key>DeviceProperties</key>
+	<dict>
+		<key>Add</key>
+		<dict>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>CQClPg==</data>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,2,0</string>
+				<key>device-id</key>
+				<data>pT4AAA==</data>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>framebuffer-patch-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-stolenmem</key>
+				<data>AAAwAQ==</data>
+				<key>framebuffer-fbmem</key>
+				<data>AACQAA==</data>
+				<key>framebuffer-con2-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con2-alldata</key>
+				<data>AgIKAAAIAADHAQAA</data>
+				<key>model</key>
+				<string>Intel HD Graphics 620</string>
+			</dict>
+		</dict>
+		<key>Delete</key>
+		<dict/>
+	</dict>
 	<key>Kernel</key>
 	<dict>
-		<key>DeviceProperties</key>
-		<dict>
-			<key>Add</key>
-			<dict>
-				<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
-				<dict>
-					<key>AAPL00,override-no-connect</key>
-					<data>AP///////wBMLXlwSjg4MBMhAQOAPCJ4Km61rk9GpiYRUFS/74BxT4EAgcCBgJUAqcCzAAEBmOIAoKCgKVAIZDUAVVAhAAAaAAAA/QAwkB7WOwAKICAgICAgAAAA/ABMQzI3RzV4VAogICAgAAAA/wBISzJXNDAxNTUzCiAgAU8CAzfxRJA/HwQjCQcHgwEAAOMFwABnAwwAEAC4PGfYXcQBdoAAbRoAAAIBMJAAAAAAAADjBgUBVl4AoKCgKVAwIDUAVVAhAAAab8IAoKCgVVAwIDUAVVAhAAAaWoeAoHA4TUAwIDUAVVAhAAAaAjqAGHE4LUBYLEUAVVAhAAAebg==</data>
-					<key>AAPL,ig-platform-id</key>
-					<data>CQClPg==</data>
-					<key>AAPL,slot-name</key>
-					<string>Internal@0,2,0</string>
-					<key>device-id</key>
-					<data>pT4AAA==</data>
-					<key>device_type</key>
-					<string>VGA compatible controller</string>
-					<key>framebuffer-patch-enable</key>
-					<data>AQAAAA==</data>
-					<key>framebuffer-stolenmem</key>
-					<data>AAAwAQ==</data>
-					<key>framebuffer-fbmem</key>
-					<data>AACQAA==</data>
-					<key>framebuffer-con2-enable</key>
-					<data>AQAAAA==</data>
-					<key>framebuffer-con2-alldata</key>
-					<data>AgIKAAAIAADHAQAA</data>
-					<key>model</key>
-					<string>Intel HD Graphics 620</string>
-				</dict>
-			</dict>
-			<key>Delete</key>
-			<dict/>
-		</dict>
 		<key>Add</key>
 		<array>
 			<dict>
@@ -527,24 +509,6 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/WhateverGreen</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>YogaSMC.kext</string>
-				<key>Comment</key>
-				<string>YogaSMC.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/YogaSMC</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1334,7 +1298,7 @@
 		<key>Debug</key>
 		<dict>
 			<key>AppleDebug</key>
-			<false/>
+			<true/>
 			<key>ApplePanic</key>
 			<true/>
 			<key>DisableWatchDog</key>
@@ -1456,7 +1420,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 debug=0x100 alcid=97 igfxonln=1</string>
+				<string>-v keepsyms=1 debug=0x100 alcid=97 igfxonln=1</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -1607,11 +1571,11 @@
 			<key>AudioCodec</key>
 			<integer>0</integer>
 			<key>AudioDevice</key>
-			<string>PciRoot(0x0)/Pci(0x1F,0x3)</string>
+			<string>PciRoot(0x0)/Pci(0x1b,0x0)</string>
 			<key>AudioOutMask</key>
-			<integer>-1</integer>
+			<integer>1</integer>
 			<key>AudioSupport</key>
-			<true/>
+			<false/>
 			<key>DisconnectHda</key>
 			<false/>
 			<key>MaximumGain</key>
@@ -1621,7 +1585,7 @@
 			<key>MinimumAudibleGain</key>
 			<integer>-55</integer>
 			<key>PlayChime</key>
-			<string>Enabled</string>
+			<string>Auto</string>
 			<key>ResetTrafficClass</key>
 			<false/>
 			<key>SetupDelay</key>
@@ -1631,30 +1595,6 @@
 		<true/>
 		<key>Drivers</key>
 		<array>
-			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Comment</key>
-				<string>AudioDxe.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>LoadEarly</key>
-				<false/>
-				<key>Path</key>
-				<string>AudioDxe.efi</string>
-			</dict>
-			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Comment</key>
-				<string>BiosVideo.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>LoadEarly</key>
-				<false/>
-				<key>Path</key>
-				<string>BiosVideo.efi</string>
-			</dict>
 			<dict>
 				<key>Arguments</key>
 				<string></string>
@@ -1734,19 +1674,19 @@
 			<key>ProvideConsoleGop</key>
 			<true/>
 			<key>ReconnectGraphicsOnConnect</key>
-			<true/>
+			<false/>
 			<key>ReconnectOnResChange</key>
 			<false/>
 			<key>ReplaceTabWithSpace</key>
 			<false/>
 			<key>Resolution</key>
-			<string>1920x1080</string>
+			<string>Max</string>
 			<key>SanitiseClearScreen</key>
 			<false/>
 			<key>TextRenderer</key>
 			<string>BuiltinGraphics</string>
 			<key>UIScale</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>UgaPassThrough</key>
 			<false/>
 		</dict>
